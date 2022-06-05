@@ -4,43 +4,28 @@ interface CatFact {
 }
 
 const CatFactA = ({ facts, color }: CatFact) => {
-  return (
-    <>
-      {facts.map((fact, index) => (
-        <p style={{ color }}>
-          Fact {index}: {fact}
-        </p>
-      ))}
-    </>
-  );
+  return <></>;
 };
 
 const CatFactB = ({ facts, color }: CatFact) => {
-  return (
-    <ul style={{ color }}>
-      {facts.map((fact) => (
-        <li>{fact}</li>
-      ))}
-    </ul>
-  );
+  return <></>;
 };
 
 export default () => {
   const catFactData: CatFact = {
-    facts: [
-      "Cats make about 100 different sounds. Dogs make only about 10.",
-      "I don't know anything about cats.",
-      "Domestic cats spend about 70 percent of the day sleeping and 15 percent of the day grooming.",
-    ],
+    facts: ["Test 1", "Test 2", "Test 3"],
     color: "red",
   };
-  const abTest = Math.floor(Math.random() * 2) + 1;
+
   return (
     <div>
-      {abTest === 1 ? (
+      {catFactData.facts.length ? (
         <CatFactA {...catFactData} />
       ) : (
-        <CatFactB {...catFactData} />
+        <div>
+          <CatFactB {...catFactData} />
+          <div>No facts</div>
+        </div>
       )}
     </div>
   );
